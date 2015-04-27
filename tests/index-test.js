@@ -7,6 +7,7 @@ global.Promise = require('bluebird');
 describe('Open Graph', function () {
     before(function () {
         nock('http://ogp.me').get('/').replyWithFile(200, __dirname + '/fixtures/ogp_org.html');
+        nock('http://ogp.me').get('/promise').replyWithFile(200, __dirname + '/fixtures/ogp_org.html');
         nock('http://ogp.me').get('/optional').replyWithFile(200, __dirname + '/fixtures/ogp_org_optional.html');
         nock('http://ogp.me').get('/structured').replyWithFile(200, __dirname + '/fixtures/ogp_org_structured.html');
         nock('http://ogp.me').get('/arrays').replyWithFile(200, __dirname + '/fixtures/ogp_org_arrays.html');
@@ -27,6 +28,22 @@ describe('Open Graph', function () {
             expect(data.url).to.be('http://ogp.me/');
             done();
         });
+    });
+
+    it('should get basic metadata using a promise', function (done) {
+        openGraph({
+            url: "http://ogp.me/promise"
+        }).then(function (data) {
+            expect(data.title).to.be('Open Graph protocol');
+            expect(data.type).to.be('website');
+            expect(data.image[0]).to.eql({ 
+                url: 'http://ogp.me/logo.png',
+                type: 'image/png',
+                width: '300',
+                height: '300' 
+            });
+            expect(data.url).to.be('http://ogp.me/');
+        }).done(done);
     });
 
     it('should get optional metadata', function (done) {
