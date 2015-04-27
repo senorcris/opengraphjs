@@ -9,7 +9,8 @@
     "url": "https://github.com/senorcris"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha tests/index.spec.js"
+    "test": "mocha tests/*-test.js",
+    "test-cov": "istanbul cover --report lcovonly --dir ./reports ./node_modules/mocha/bin/_mocha -- -R spec ./tests"
   },
   "dependencies": {
     "cheerio": "0.19.0",
@@ -20,7 +21,8 @@
     "expect.js": "0.3.1",
     "mocha": "2.2.4",
     "bluebird": "^2.9.24",
-    "nock": "^1.7.0"
+    "nock": "^1.7.0",
+    "istanbul": "^0.3.2"
   },
   "repository": {
     "type": "git",

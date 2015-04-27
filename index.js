@@ -1,6 +1,5 @@
 var request = require('request'),
     cheerio = require('cheerio'),
-    _ = require('lodash'),
     fields = require('./lib/fields'),
     utils = require('./lib/utils');
 
@@ -14,7 +13,7 @@ var getOpenGraph = function(options, callback) {
     var cb = callback || utils.createPromiseCallback();
 
     request(options, function(err, response, body) {
-        if(!err && response.statusCode == 200) {
+        if(!err && response.statusCode === 200) {
             var $ = cheerio.load(body),
                 title = $('head title'),
                 meta = $('meta[property*="og:"], meta[property*="fb:"], meta[name*="twitter:"]'),
@@ -25,7 +24,7 @@ var getOpenGraph = function(options, callback) {
                 var value = $(this).attr('content');
                 var data = fields[key];
                 var groupItem;
-                var currentGroup;
+                
                 if (!data) return;
 
                 if (!data.group) {
