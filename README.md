@@ -2,6 +2,8 @@
 
 OpenGraphJS builds a JSON object from a web page which follows the [Open Graph Protocol](http://ogp.me). The JavaScript object returned by this library contains important metadata such as the description, image, and title.
 
+[![Code Climate](https://codeclimate.com/github/senorcris/opengraphjs/badges/gpa.svg)](https://codeclimate.com/github/senorcris/opengraphjs)
+
 ### Installation
 ```
 npm install opengraphjs
