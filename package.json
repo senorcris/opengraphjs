@@ -1,0 +1,37 @@
+{
+  "name": "opengraphjs",
+  "description": "Retrieve open graph tags as a JavaScript object",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "author": {
+    "name": "senorcris",
+    "url": "https://github.com/senorcris"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha tests/index.spec.js"
+  },
+  "dependencies": {
+    "cheerio": "0.19.0",
+    "lodash": "3.6.0",
+    "request": "2.55.0"
+  },
+  "devDependencies": {
+    "expect.js": "0.3.1",
+    "mocha": "2.2.4",
+    "bluebird": "^2.9.24",
+    "nock": "^1.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/senorcris/opengraphjs.git",
+    "web": "http://github.com/senorcris/opengraphjs"
+  },
+  "keywords": [
+    "open graph",
+    "opengraph",
+    "ogp",
+    "og",
+    "meta"
+  ]
+}
