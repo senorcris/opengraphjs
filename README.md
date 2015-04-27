@@ -8,7 +8,7 @@ npm install opengraphjs
 ### Expected ouput
 
 #### Sample
-```
+```js
 { 
   title: 'Open Graph protocol',
   type: 'website',
@@ -101,7 +101,7 @@ npm install opengraphjs
   - define `global.Promise = require('bluebird');`
   - Feel free to substitute Bluebird with your perferred promise library
 
-```
+```js
 // Include it
 var ogjs = require('opengraphjs');
 // Pass in a URL
@@ -114,7 +114,7 @@ ogjs({ url: 'http://senorcris.com' })
 ```
 
 #### Callbacks
-```
+```js
 // Include it
 var ogjs = require('opengraphjs');
 // Pass in a URL
