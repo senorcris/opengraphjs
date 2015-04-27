@@ -1,12 +1,10 @@
 var openGraph = require('../index'),
-    Promise = require('bluebird'),
     expect = require('expect.js'),
-    nock = require('nock'),
-    fs = require('fs');
+    nock = require('nock');
 
 global.Promise = require('bluebird');
 
-describe('Open Graph', function (done) {
+describe('Open Graph', function () {
     before(function () {
         nock('http://ogp.me').get('/').replyWithFile(200, __dirname + '/fixtures/ogp_org.html');
         nock('http://ogp.me').get('/optional').replyWithFile(200, __dirname + '/fixtures/ogp_org_optional.html');
@@ -38,7 +36,7 @@ describe('Open Graph', function (done) {
             expect(data.audio[0].url).to.be("http://example.com/bond/theme.mp3");
             expect(data.description).to.be("Sean Connery found fame and fortune as the suave, sophisticated British agent, James Bond.");
             expect(data.determiner).to.be("the");
-            expect(data.locale.name).to.be("en_GB")
+            expect(data.locale.name).to.be("en_GB");
             expect(data.locale.alternate).to.contain("fr_FR", "es_ES");
             expect(data.siteName).to.be("IMDb");
             expect(data.video[0].url).to.be("http://example.com/bond/trailer.swf");
