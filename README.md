@@ -12,6 +12,41 @@ OpenGraphJS builds a JSON object from a web page which follows the [Open Graph P
 npm install opengraphjs
 ```
 
+### Usage
+
+#### Promise support
+- Its easy, if you are using a version of node with Promises you are ready to go!
+- Other versions of node:
+  - define `global.Promise = require('bluebird');`
+  - Feel free to substitute Bluebird with your perferred promise library
+
+```js
+// Include it
+var ogjs = require('opengraphjs');
+// Pass in a URL
+ogjs({ url: 'http://senorcris.com' })
+  .then(function (data) {
+    console.log(data); // some share data parsed from metatags..
+  }, function (err) {
+    console.log('It seems that we have fumbled with an error', err);
+  });
+```
+
+#### Callbacks
+```js
+// Include it
+var ogjs = require('opengraphjs');
+// Pass in a URL
+ogjs({ url: 'http://senorcris.com' }, function (err, data) {
+    if (err) {
+      console.log('It seems that we have fumbled with an error', err);
+      return;
+    }
+    
+    console.log(data); // some share data parsed from metatags..
+  });
+```
+
 ### Expected ouput
 
 #### Sample
@@ -99,41 +134,6 @@ npm install opengraphjs
     <td class="tg-031e">Array of objects <br><br>Properties:<br>- url (always present)<br>- secureUrl (optional)</td>
   </tr>
 </table>
-
-### Usage
-
-#### Promise support
-- Its easy, if you are using a version of node with Promises you are ready to go!
-- Other versions of node:
-  - define `global.Promise = require('bluebird');`
-  - Feel free to substitute Bluebird with your perferred promise library
-
-```js
-// Include it
-var ogjs = require('opengraphjs');
-// Pass in a URL
-ogjs({ url: 'http://senorcris.com' })
-  .then(function (data) {
-    console.log(data); // some share data parsed from metatags..
-  }, function (err) {
-    console.log('It seems that we have fumbled with an error', err);
-  });
-```
-
-#### Callbacks
-```js
-// Include it
-var ogjs = require('opengraphjs');
-// Pass in a URL
-ogjs({ url: 'http://senorcris.com' }, function (err, data) {
-    if (err) {
-      console.log('It seems that we have fumbled with an error', err);
-      return;
-    }
-    
-    console.log(data); // some share data parsed from metatags..
-  });
-```
 
 ### Credits and Acknowledgements
 - Inspired by [openGraphScraper ](https://github.com/jshemas/openGraphScraper)
