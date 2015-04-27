@@ -34,6 +34,7 @@ describe('Open Graph', function () {
         openGraph({
             url: "http://ogp.me/promise"
         }).then(function (data) {
+            expect(data).to.be.an.object;
             expect(data.title).to.be('Open Graph protocol');
             expect(data.type).to.be('website');
             expect(data.image[0]).to.eql({ 
