@@ -5,6 +5,7 @@ OpenGraphJS builds a JSON object from a web page which follows the [Open Graph P
 [![Code Climate](https://codeclimate.com/github/senorcris/opengraphjs/badges/gpa.svg)](https://codeclimate.com/github/senorcris/opengraphjs)
 [![Build Status](https://travis-ci.org/senorcris/opengraphjs.svg)](https://travis-ci.org/senorcris/opengraphjs)
 [![Test Coverage](https://codeclimate.com/github/senorcris/opengraphjs/badges/coverage.svg)](https://codeclimate.com/github/senorcris/opengraphjs)
+[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/opengraphjs)
 
 
 ### Installation
