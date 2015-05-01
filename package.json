@@ -1,6 +1,6 @@
 {
   "name": "opengraphjs",
-  "description": "Retrieve open graph tags as a JavaScript object",
+  "description": "Scrape open graph tags from the head of document as a JavaScript object (JSON)",
   "version": "1.0.0",
   "license": "MIT",
   "main": "index.js",
@@ -34,6 +34,11 @@
     "opengraph",
     "ogp",
     "og",
-    "meta"
+    "meta",
+    "head scraper",
+    "site scraper",
+    "meta scraper",
+    "scraper",
+    "meta data"
   ]
 }
