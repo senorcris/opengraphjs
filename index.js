@@ -16,7 +16,7 @@ var getOpenGraph = function(options, callback) {
         if(!err && response.statusCode === 200) {
             var $ = cheerio.load(body),
                 title = $('head title'),
-                meta = $('meta[property*="og:"], meta[property*="fb:"], meta[property*="twitter:"]'),
+                meta = $('head').find('meta[property*="og:"], meta[property*="fb:"], meta[property*="twitter:"]'),
                 openGraph = {};
 
             meta.each(function(idx) {
