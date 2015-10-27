@@ -42,12 +42,12 @@ var getOpenGraph = function(options, callback) {
                     groupItem[data.fieldName] = openGraph[data.group][data.fieldName] || [];
                     groupItem[data.fieldName].push(value);
                 } else {
-                    if (data.type === 'arrayItem') {
+                    if (Array.isArray(openGraph[data.group])) {
+                        groupItem = openGraph[data.group][openGraph[data.group].length - 1];
+                    } else if (data.type === 'arrayItem' || !groupItem) {
                         groupItem = new Item();
                         openGraph[data.group] = openGraph[data.group] || [];
                         openGraph[data.group].push(groupItem);
-                    } else if (Array.isArray(openGraph[data.group])) {
-                        groupItem = openGraph[data.group][openGraph[data.group].length - 1];
                     }
 
                     groupItem.setProp(data.fieldName, value);
